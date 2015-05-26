@@ -1,0 +1,299 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery-ui
+ *= require_tree .
+ */
+
+html, body, header, div, section, figure, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #999;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn,
+.page-title,
+.card-show {
+  font-family: 'roboto';
+  font-weight: 300;
+}
+
+.btn {
+  border: 1px solid black;
+  background: white;
+  overflow: hidden;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.navbar-btn {
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.new-board {
+  font-size: 25px;
+  padding: 5px 12px 5px 11px;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.topnav {
+  top: 0;
+  position: fixed;
+  display: block;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid black;
+  opacity: 1;
+  z-index: 1;
+}
+
+.topnav-brand,
+.board-title,
+.list-item {
+  font-family: 'playfair display', sans-serif;
+}
+
+.topnav-brand {
+  display: block;
+  float: left;
+  margin: 0 50px;
+
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.topnav-menu-right {
+  float: right;
+  display: block;
+  list-style: none;
+  margin-right: 30px;
+}
+
+.topnav-menu-right li {
+  float: left;
+  display: block;
+}
+
+#main {
+  top: 66px;
+  position: relative;
+  display: block;
+  margin: 0 80px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin: 50px auto;
+  width: 200px;
+  padding: 10px;
+  border-bottom: 18px solid black;
+}
+
+.board-item {
+  border: 5px solid black;
+  margin: 30px auto;
+  width: 60%;
+  minimum-width: 300px;
+  text-align: center;
+  font-size: 36px;
+  vertical-align: middle;
+}
+
+.board-item:hover,
+.navbar-btn:hover {
+  color: white;
+}
+
+.navbar-btn:hover {
+  background: black;
+  cursor: pointer;
+}
+
+.boards-list a {
+  width: 100%;
+  height: 100%;
+}
+
+.boards-list a:hover {
+  color: white;
+}
+
+.board-title {
+  margin: 0;
+  padding: 40px;
+}
+
+/* Board View */
+
+
+.list-show, .new-list {
+  display: block;
+  float: left;
+  width: 26%;
+  margin: 15px 18px;
+  padding-bottom: 10px;
+  border: 8px solid black;
+}
+
+.list-title {
+  font-size: 24px;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px 0 8px;
+
+}
+
+.cards-list {
+  padding: 0;
+}
+
+.card-show {
+}
+
+.card-show li {
+  font-size: 18px;
+  width: 180px;
+  border: 2px solid black;
+  margin: 10px auto;
+  padding: 10px 0;
+}
+
+.card-show li:hover {
+  background-color: #ccc;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.new-list-link:hover,
+.new-card-btn:hover,
+.new-item-btn:hover {
+  cursor: pointer;
+}
+
+/* Hover Effects */
+
+.hvr-rectangle-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  background: white;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+.hvr-rectangle-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-rectangle-out:hover, .hvr-rectangle-out:focus, .hvr-rectangle-out:active {
+  color: white;
+}
+.hvr-rectangle-out:hover:before, .hvr-rectangle-out:focus:before, .hvr-rectangle-out:active:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+/* Font Libraries */
+
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);

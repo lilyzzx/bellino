@@ -1,0 +1,30 @@
+<nav class="topnav group">
+  <figure class="topnav-brand">
+    <a class="topnav-brand-logo" href="/#">b</a>
+  </figure>
+  <ul class="topnav-menu-right">
+  <% if signed_in? %>
+    <li>
+      <a href="/#boards/new" style="padding: 0;">
+        <button class='navbar-btn btn new-board hvr-radial-out'>
+          +
+        </button>
+      </a>
+    </li>
+    <li>
+      <%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn btn hvr-radial-out" %>
+    </li>
+
+  <% else %>
+    <li><%= button_to "Log in", new_session_url, class: 'navbar-btn btn hvr-radial-out' %></li>
+    <li><%= button_to "Sign up", new_user_url, class: 'navbar-btn btn hvr-radial-out' %></li>
+  <% end %>
+  </ul>
+</nav>
+
+<% if flash[:errors] %>
+<div class="alert alert-warning alert-dismissible" role="alert">
+   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+<%= flash[:errors].join("<br>").html_safe %>
+</div>
+<% end %>
