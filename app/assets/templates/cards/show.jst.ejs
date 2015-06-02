@@ -1,6 +1,9 @@
 <li>
   <%= card.escape('title') %>
-  <!-- <% if (card.escape('description')) { %>
-    – <%= card.escape('description') %>
-  <% } %> -->
+  <% if (card.escape('description')) { %>
+    <div class="desc-thumb" title="<%= card.escape('description') %>">
+      <i class="fa icon-reorder"></i>
+      <!--  -->
+    </div>
+  <% } %>
 </li>

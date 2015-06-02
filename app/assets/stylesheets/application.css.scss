@@ -189,13 +189,39 @@ ul {
   width: 180px;
   border: 2px solid black;
   margin: 10px auto;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 .card-show li:hover {
   background-color: #ccc;
   text-decoration: line-through;
   cursor: pointer;
+
+  .desc-thumb:after {
+    display: block;
+  }
+}
+
+.desc-thumb {
+  float: left;
+  font-size: 12px;
+  margin-top: -16px;
+  position: absolute;
+}
+
+.desc-thumb:after {
+  content: attr(title);
+  position: absolute;
+  display: none;
+  left: 50%;
+  transform: translateX(100%) translateY(120%);
+  bottom: 65px;
+  background: #666;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px 10px;
+  width: 125px;
 }
 
 .new-list-link:hover,

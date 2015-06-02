@@ -16,9 +16,9 @@ c4 = l2.cards.create(title: 'Thailand')
 c5 = l2.cards.create(title: 'Korea')
 c6 = l2.cards.create(title: 'China')
 
-c7 = l2.cards.create(title: 'Colombia')
-c8 = l2.cards.create(title: 'Peru')
-c9 = l2.cards.create(title: 'Argentina')
+c7 = l1.cards.create(title: 'Colombia')
+c8 = l1.cards.create(title: 'Peru')
+c9 = l1.cards.create(title: 'Argentina')
 
 i1 = c1.items.create(done: true, title: 'Berlin')
 i2 = c1.items.create(done: false, title: 'Hamburg')
