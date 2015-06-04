@@ -44,25 +44,16 @@ ActiveRecord::Schema.define(version: 20140716203208) do
   add_index "card_assignments", ["card_id", "user_id"], name: "index_card_assignments_on_card_id_and_user_id", unique: true, using: :btree
 
   create_table "cards", force: :cascade do |t|
-    t.string   "title",                     null: false
-    t.integer  "list_id",                   null: false
+    t.string   "title",                       null: false
+    t.integer  "list_id",                     null: false
     t.text     "description"
     t.float    "ord",         default: 0.0
+    t.boolean  "done",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "cards", ["list_id"], name: "index_cards_on_list_id", using: :btree
-
-  create_table "items", force: :cascade do |t|
-    t.string   "title",                      null: false
-    t.integer  "card_id",                    null: false
-    t.boolean  "done",       default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "items", ["card_id"], name: "index_items_on_card_id", using: :btree
 
   create_table "lists", force: :cascade do |t|
     t.string   "title",                    null: false
