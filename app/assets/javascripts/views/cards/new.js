@@ -6,7 +6,7 @@ Bellino.Views.CardNew = Backbone.View.extend({
   // collection: list,
 
   events: {
-    'submit': 'saveCard'
+    'click .add-card': 'saveCard'
   },
 
   initialize: function (options) {
