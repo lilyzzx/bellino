@@ -20,9 +20,5 @@ c7 = l1.cards.create(title: 'Colombia')
 c8 = l1.cards.create(title: 'Peru')
 c9 = l1.cards.create(title: 'Argentina')
 
-i1 = c1.items.create(done: true, title: 'Berlin')
-i2 = c1.items.create(done: false, title: 'Hamburg')
-i3 = c1.items.create(done: false, title: 'Leipzig')
-
 b1.members = [u2]
 b1.save!

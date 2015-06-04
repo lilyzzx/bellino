@@ -1,12 +1,11 @@
 Bellino.Views.ListNew = Backbone.View.extend({
   template: JST['lists/new'],
 
-  className: 'new-list',
   tagName: 'form',
   // collection: board,
 
   events: {
-    'submit': 'saveList'
+    'click .add-list': 'saveList'
   },
 
   render: function () {

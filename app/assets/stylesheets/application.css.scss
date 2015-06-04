@@ -170,21 +170,25 @@ ul {
   display: inline-block;
 }
 
-.list-show, .new-list {
+.list-show {
+}
+
+.new-list, .list-show {
+  border: 8px solid black;
   display: block;
   float: left;
   width: 275px;
   margin: 15px 18px;
-  padding-bottom: 10px;
-  border: 8px solid black;
+  padding: 10px 0;
 }
 
 .list-title {
+  font-family: 'playfair display', sans-serif;
+  font-weight: 700;
   font-size: 24px;
   width: 200px;
   margin: 0 auto;
-  padding: 10px 0 8px;
-
+  text-align: center;
 }
 
 .cards-list {
@@ -202,14 +206,14 @@ ul {
   padding: 10px;
 }
 
-.card-show li:hover {
+.card-show li:hover, .done {
   background-color: #ccc;
   text-decoration: line-through;
   cursor: pointer;
+}
 
-  .desc-thumb:after {
-    display: block;
-  }
+.card-show li:hover .desc-thumb:after {
+  display: block;
 }
 
 .desc-thumb {
@@ -243,21 +247,27 @@ ul {
     padding: 2px;
     margin: 4px;
   }
+}
 
-  .add-card {
-    margin-top: 5px;
-    border: 1px solid #000;
-    width: 90px;
-    font-size: 16px;
-    border-radius: 10px;
-    background: #fff;
-  }
+.add-card, .add-list {
+  margin-top: 5px;
+  border: 1px solid #000;
+  width: 90px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.new-list-form input {
+  margin-top: 6px;
 }
 
 .new-list-link:hover,
 .new-card-btn:hover,
+.new-list-btn:hover,
 .new-item-btn:hover,
-.add-card:hover {
+.add-card:hover,
+.add-list:hover {
   cursor: pointer;
 }
 
