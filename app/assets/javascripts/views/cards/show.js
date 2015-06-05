@@ -5,7 +5,8 @@ Bellino.Views.CardShow = Backbone.View.extend({
 
   events: {
     'click .new-item-link': 'newItem',
-    'click li': 'toggleItemDone'
+    'click li': 'toggleItemDone',
+    'click .card-delete': 'destroyItem'
   },
 
   initialize: function (options) {

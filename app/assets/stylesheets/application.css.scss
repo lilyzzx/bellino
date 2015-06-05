@@ -204,6 +204,7 @@ ul {
   border: 2px solid black;
   margin: 10px auto;
   padding: 10px;
+  position: relative;
 }
 
 .card-show li:hover, .done {
@@ -212,8 +213,13 @@ ul {
   cursor: pointer;
 }
 
-.card-show li:hover .desc-thumb:after {
-  display: block;
+.card-show li:hover {
+  .desc-thumb:after {
+    display: block;
+  }
+  .card-delete {
+    display: block;
+  }
 }
 
 .desc-thumb {
@@ -221,6 +227,7 @@ ul {
   font-size: 12px;
   margin-top: -16px;
   position: absolute;
+  z-index: 1;
 }
 
 .desc-thumb:after {
@@ -228,7 +235,7 @@ ul {
   position: absolute;
   display: none;
   left: 50%;
-  transform: translateX(100%) translateY(120%);
+  transform: translateX(-70%) translateY(120%);
   bottom: 65px;
   background: #666;
   color: #fff;
@@ -236,6 +243,25 @@ ul {
   letter-spacing: 1px;
   padding: 10px 10px;
   width: 125px;
+}
+
+.card-delete {
+  right: 10px;
+  top: 26px;
+  font-size: 12px;
+  margin-top: -16px;
+  position: absolute;
+  border: 1px solid #000;
+  width: 18px;
+  height: 16px;
+  padding-top: 3px;
+  border-radius: 12px;
+  display: none;
+}
+
+.card-delete:hover {
+  color: #e00;
+  border-color: #e00;
 }
 
 .new-card {

@@ -6,7 +6,11 @@
   <% if (card.escape('description')) { %>
     <div class="desc-thumb" title="<%= card.escape('description') %>">
       <i class="fa icon-reorder"></i>
-      <!--  -->
+    </div>
+  <% } %>
+  <% if (card.get('done')) { %>
+    <div class="card-delete">
+      ✕
     </div>
   <% } %>
 </li>
