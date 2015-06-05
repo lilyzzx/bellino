@@ -2,10 +2,17 @@
   <figure class="topnav-brand">
     <a class="topnav-brand-logo" href="/#">b</a>
   </figure>
+  <% if signed_in? %>
+    <ul class="topnav-menu-left">
+      <li><a href="/#">My Boards</a></li>
+    </ul>
+  <% end %>
   <ul class="topnav-menu-right">
   <% if signed_in? %>
     <li>
-      <%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn btn hvr-radial-out" %>
+      <button class="navbar-btn btn hvr-radial-out">
+        <%= button_to "Sign out", session_url, method: :delete %>
+      </button>
     </li>
 
   <% else %>
@@ -17,7 +24,7 @@
 
 <figure class="new-board">
   <a href="/#boards/new" style="padding: 0;">
-    <button class='navbar-btn btn new-board hvr-radial-out'>
+    <button class='btn new-board'>
       +
     </button>
   </a>

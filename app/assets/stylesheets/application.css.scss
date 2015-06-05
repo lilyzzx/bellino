@@ -13,11 +13,14 @@
  *= require_tree .
  */
 
-html, body, header, div, section, figure, p, ul {
+html, body, header, div, section, figure, p, ul, input, textarea {
   margin: 0;
   padding: 0;
   border: 0;
   font: inherit;
+  background: inherit;
+  color: inherit;
+  cursor: inherit;
 }
 
 body {
@@ -27,6 +30,7 @@ body {
 a {
   text-decoration: none;
   color: black;
+  transition: color 0.4s ease;
 }
 
 a:hover {
@@ -39,7 +43,8 @@ ul {
 
 .btn,
 .page-title,
-.card-show {
+.card-show,
+.new-card {
   font-family: 'roboto';
   font-weight: 300;
 }
@@ -89,6 +94,17 @@ ul {
   font-weight: bold;
 }
 
+.topnav-menu-left {
+  float: left;
+  margin-top: 15px;
+  li {
+    font-family: 'roboto';
+    font-weight: 300;
+    font-size: 24px;
+    margin: 6px 30px;
+  }
+}
+
 .topnav-menu-right {
   float: right;
   display: block;
@@ -108,9 +124,18 @@ ul {
   z-index: 2;
 
   button {
-    font-size: 36px;
-    padding: 5px 14px 4px 14px;
-    border-radius: 25px;
+  font-size: 44px;
+  padding: 4px 16px 3px 16px;
+  border-radius: 30px;
+  color: #fff;
+  background: #000;
+  border: 1px solid #000;
+  transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  button:hover {
+    background: #888;
+    border-color: #888;
   }
 }
 
@@ -298,13 +323,18 @@ ul {
   border-color: #e00;
 }
 
+.new-card-form {
+  transition: all 0.4s ease;
+}
+
 .new-card {
   margin-top: 10px;
 
   input, textarea {
+    border: 1px solid #ccc;
     font-size: 13px;
     width: 180px;
-    padding: 2px;
+    padding: 6px;
     margin: 4px;
   }
 }
@@ -328,7 +358,8 @@ ul {
 .new-item-btn:hover,
 .add-card:hover,
 .add-list:hover,
-.list-delete:hover {
+.list-delete:hover,
+.new-board:hover {
   cursor: pointer;
 }
 
