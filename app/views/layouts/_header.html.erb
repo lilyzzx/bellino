@@ -5,13 +5,6 @@
   <ul class="topnav-menu-right">
   <% if signed_in? %>
     <li>
-      <a href="/#boards/new" style="padding: 0;">
-        <button class='navbar-btn btn new-board hvr-radial-out'>
-          +
-        </button>
-      </a>
-    </li>
-    <li>
       <%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn btn hvr-radial-out" %>
     </li>
 
@@ -21,6 +14,14 @@
   <% end %>
   </ul>
 </nav>
+
+<figure class="new-board">
+  <a href="/#boards/new" style="padding: 0;">
+    <button class='navbar-btn btn new-board hvr-radial-out'>
+      +
+    </button>
+  </a>
+</figure>
 
 <% if flash[:errors] %>
 <div class="alert alert-warning alert-dismissible" role="alert">
