@@ -62,16 +62,6 @@ ActiveRecord::Schema.define(version: 20140716203208) do
     t.datetime "updated_at"
   end
 
-  add_index "items", ["card_id"], name: "index_items_on_card_id", using: :btree
-
-  create_table "lists", force: :cascade do |t|
-    t.string   "title",                    null: false
-    t.integer  "board_id",                 null: false
-    t.float    "ord",        default: 0.0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   add_index "lists", ["board_id"], name: "index_lists_on_board_id", using: :btree
 
   create_table "users", force: :cascade do |t|

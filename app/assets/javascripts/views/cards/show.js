@@ -5,7 +5,7 @@ Bellino.Views.CardShow = Backbone.View.extend({
 
   events: {
     'click .new-item-link': 'newItem',
-    'click li': 'destroyItem'
+    'click li': 'toggleItemDone'
   },
 
   initialize: function (options) {
@@ -18,6 +18,16 @@ Bellino.Views.CardShow = Backbone.View.extend({
     var view = this.template({ card: this.card });
     this.$el.html(view);
     return this;
+  },
+
+  toggleItemDone: function (event) {
+    event.preventDefault();
+    if (this.card.get('done')) {
+      this.card.set({ done: false });
+    } else {
+      this.card.set({ done: true });
+    }
+    this.card.save();
   },
 
   destroyItem: function (event) {

@@ -19,6 +19,7 @@ c6 = l2.cards.create(title: 'China')
 c7 = l1.cards.create(title: 'Colombia')
 c8 = l1.cards.create(title: 'Peru')
 c9 = l1.cards.create(title: 'Argentina')
+c10 = l1.cards.create(title: 'Jupiter', description: 'is a planet silly, not a country')
 
 b1.members = [u2]
 b1.save!

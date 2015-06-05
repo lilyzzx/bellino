@@ -17,14 +17,10 @@ json.lists @board.lists do |list|
     json.description card.description
     json.ord card.ord
     json.id card.id
+    json.done card.done
     json.assigned_users card.card_assignments do |card_assignment|
       json.user_id card_assignment.user_id
       json.id card_assignment.id
-    end
-    json.items card.items do |item|
-      json.title item.title
-      json.done item.done
-      json.id item.id
     end
   end
 end

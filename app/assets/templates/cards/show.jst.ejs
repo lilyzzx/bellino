@@ -1,4 +1,7 @@
-<li>
+<li <% if (card.get('done')) { %>
+  class="done"
+  <% } %>
+  >
   <%= card.escape('title') %>
   <% if (card.escape('description')) { %>
     <div class="desc-thumb" title="<%= card.escape('description') %>">
