@@ -171,6 +171,28 @@ ul {
 }
 
 .list-show {
+  position: relative;
+}
+
+.list-delete {
+  padding: 0 2px;
+  right: 10px;
+  top: 22px;
+  font-size: 22px;
+  margin-top: -16px;
+  color: #900;
+  position: absolute;
+  // border: 1px solid #000;
+  // border-radius: 12px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.list-show:hover {
+  .list-delete {
+    opacity: 1;
+  }
 }
 
 .new-list, .list-show {
@@ -205,6 +227,7 @@ ul {
   margin: 10px auto;
   padding: 10px;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .card-show li:hover, .done {
@@ -218,7 +241,7 @@ ul {
     display: block;
   }
   .card-delete {
-    display: block;
+    opacity: 1;
   }
 }
 
@@ -256,9 +279,12 @@ ul {
   height: 16px;
   padding-top: 3px;
   border-radius: 12px;
-  display: none;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
+.list-delete:hover,
 .card-delete:hover {
   color: #e00;
   border-color: #e00;
@@ -293,7 +319,8 @@ ul {
 .new-list-btn:hover,
 .new-item-btn:hover,
 .add-card:hover,
-.add-list:hover {
+.add-list:hover,
+.list-delete:hover {
   cursor: pointer;
 }
 

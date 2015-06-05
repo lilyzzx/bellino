@@ -4,13 +4,14 @@ Bellino.Views.ListShow = Backbone.View.extend({
   className: 'list-show group',
 
   events: {
-    'click .new-card-link': 'newCard'
+    'click .new-card-link': 'newCard',
+    'click .list-delete': 'destroyList'
   },
 
   initialize: function (options) {
     this.list = options.list,
     this.board = options.board,
-    this.listenTo(this.list, "sync", this.render);
+    this.listenTo(this.list, "sync remove", this.render);
     this.listenTo(this.list.cards(), "sync remove", this.render);
   },
 
@@ -35,5 +36,10 @@ Bellino.Views.ListShow = Backbone.View.extend({
       board: this.board
     });
     this.$el.find('.new-card-form').html(newCardView.render().$el);
+  },
+
+  destroyList: function (event) {
+    event.preventDefault();
+    this.list.destroy();
   }
 });

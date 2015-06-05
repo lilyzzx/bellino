@@ -9,7 +9,7 @@ Bellino.Views.BoardShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync add", this.render);
-    this.listenTo(this.model.lists(), "add sync", this.render);
+    this.listenTo(this.model.lists(), "add sync remove", this.render);
   },
 
   render: function () {

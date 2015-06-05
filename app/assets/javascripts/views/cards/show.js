@@ -23,6 +23,7 @@ Bellino.Views.CardShow = Backbone.View.extend({
 
   toggleItemDone: function (event) {
     event.preventDefault();
+    if (event.toElement.className == "card-delete") { return; }
     if (this.card.get('done')) {
       this.card.set({ done: false });
     } else {
