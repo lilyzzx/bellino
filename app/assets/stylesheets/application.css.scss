@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-html, body, header, div, section, figure, p, ul, input, textarea {
+html, body, header, div, section, figure, p, ul, input, textarea, button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -324,23 +324,117 @@ ul {
 }
 
 .new-card-form {
-  transition: all 0.4s ease;
+  border: 1px solid black;
+  margin: 16px 36px 10px;
+  background: white;
+  overflow: hidden;
+  border-radius: 20px;
+  font-size: 15px;
+  width: 22px;
+}
+
+.animation-growform {
+  width: 202px;
+  height: 128px;
+  border-radius: 0;
+  border-color: #ccc;
+  animation: growform 0.8s;
+  .new-card {
+    opacity: 1;
+  }
+}
+
+.animation-shrinkform {
+  animation: shrinkform 0.8s;
+}
+
+@keyframes growform {
+  0% {
+    width: 22px;
+    height: 22px;
+    border-color: #000;
+    .new-card {
+      opacity: 0;
+    }
+  }
+  50% {
+    width: 205px;
+    height: 22px;
+    border-radius: 20px;
+    border-color: #000;
+    .new-card {
+      opacity: 0;
+    }
+  }
+  100% {
+    width: 202px;
+    height: 128px;
+    border-radius: 0;
+    border-color: #ccc;
+    .new-card {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes shrinkform {
+  0% {
+    width: 202px;
+    height: 128px;
+    border-radius: 0;
+    border-color: #ccc;
+  }
+  50% {
+    width: 205px;
+    height: 22px;
+    border-radius: 20px;
+    border-color: #000;
+  }
+  100% {
+    width: 22px;
+    height: 22px;
+    border-color: #000;
+  }
+}
+
+.new-card-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 20px;
+  margin-top: -2px;
 }
 
 .new-card {
   margin-top: 10px;
+  transition: opacity 7s ease;
+  opacity: 0;
 
-  input, textarea {
-    border: 1px solid #ccc;
-    font-size: 13px;
+  input {
+    border-bottom: 1px solid #ccc;
     width: 180px;
     padding: 6px;
-    margin: 4px;
+    margin: 2px 4px 4px;
+  }
+
+  input:first-of-type {
+    font-size: 18px;
+    color: #000;
+  }
+
+  input:last-of-type {
+    font-size: 13px;
   }
 }
 
-.add-card, .add-list {
+.add-card {
+  margin-top: 10px;
+}
+
+.add-list {
   margin-top: 5px;
+}
+
+.add-card, .add-list {
   border: 1px solid #000;
   width: 90px;
   font-size: 16px;
