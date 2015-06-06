@@ -332,6 +332,7 @@ ul {
   border-radius: 20px;
   font-size: 15px;
   width: 22px;
+  height: 22px;
 }
 
 .animation-growform {
@@ -347,6 +348,9 @@ ul {
 
 .animation-shrinkform {
   animation: shrinkform 0.8s;
+  .new-card {
+    opacity: 0;
+  }
 }
 
 @keyframes growform {
@@ -407,7 +411,7 @@ ul {
 
 .new-card {
   margin-top: 10px;
-  transition: opacity 7s ease;
+  transition: opacity 3s ease;
   opacity: 0;
 
   input {
