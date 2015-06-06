@@ -42,7 +42,6 @@ Bellino.Views.ListShow = Backbone.View.extend({
       this.$el.find('.new-card-form').removeClass("animation-shrinkform");
       this.$el.find('.new-card-form').addClass("animation-growform");
     }.bind(this), 100);
-
   },
 
   closeNewCard: function (event) {
@@ -51,7 +50,7 @@ Bellino.Views.ListShow = Backbone.View.extend({
     this.$el.find('.new-card-form').addClass("animation-shrinkform");
     window.setTimeout( function () {
       this.$el.find('.new-card-form').html(this.linkTemplate());
-    }.bind(this), 300);
+    }.bind(this), 200);
   },
 
   destroyList: function (event) {
