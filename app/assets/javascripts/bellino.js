@@ -5,9 +5,7 @@ window.Bellino = {
   Routers: {},
 
   initialize: function() {
-    var mainEl = '#main';
-
-    new Bellino.Routers.BoardRouter({ mainEl: mainEl });
+    new Bellino.Routers.BoardRouter({ mainEl: '#main' });
     Backbone.history.start();
   }
 };

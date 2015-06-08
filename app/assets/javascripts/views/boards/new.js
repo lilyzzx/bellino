@@ -4,7 +4,7 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   className: 'board-new',
 
   events: {
-    'submit .new-board': 'saveBoard'
+    'submit form': 'saveBoard'
   },
 
   render: function () {
@@ -16,7 +16,8 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   saveBoard: function (event) {
     event.preventDefault();
 
-    var attrs = this.$el.find('.new-board').serializeJSON().board;
+    var attrs = this.$el.find('form').serializeJSON().board;
+    console.log(attrs);
     var board = new Bellino.Models.Board(attrs);
 
     board.save({}, {

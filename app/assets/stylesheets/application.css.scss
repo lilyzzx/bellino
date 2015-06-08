@@ -462,6 +462,81 @@ ul {
   cursor: pointer;
 }
 
+/* Modal */
+
+.modal {
+  // background: white;
+  //
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // margin: -25% 0 0 -25%;
+  z-index: 5;
+
+  /* Hidden */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-is-open {
+  .modal {
+    /* Clickable */
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.modal-is-open #main, .modal-is-open .topnav {
+  -webkit-filter: blur(2px) grayscale(50%);
+  -moz-filter: blur(2px) grayscale(50%);
+  -o-filter: blur(2px) grayscale(50%);
+  -ms-filter: blur(2px) grayscale(50%);
+  filter: blur(2px) grayscale(50%);
+  opacity: 1;
+}
+
+#main, .topnav {
+  transition: background 0.3s ease;
+}
+
+.modal {
+  transition: opacity 0.3s ease;
+}
+
+.modal-form {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  padding: 20px;
+  background: #fff;
+  z-index: 3;
+  display: block;
+  width: 300px;
+  height: 100px;
+  overflow-: none;
+}
+
+.modal-close {
+  position: fixed;
+  background: #ddd;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0.3;
+}
+
+
+.dark-modal {
+  -webkit-filter: brightness(50%) opacity(90%);
+  -moz-filter: brightness(50%) opacity(90%);
+  -o-filter: brightness(50%) opacity(90%);
+  -ms-filter: brightness(50%) opacity(90%);
+  filter: brightness(50%) opacity(90%);
+}
+
 /* Hover Effects */
 
 .hvr-rectangle-out {

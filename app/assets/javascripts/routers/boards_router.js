@@ -1,7 +1,6 @@
 Bellino.Routers.BoardRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'boards/new': 'boardNew',
     'boards/:id': 'boardShow',
   },
 
@@ -28,12 +27,6 @@ Bellino.Routers.BoardRouter = Backbone.Router.extend({
     });
 
     this._swapView(boardShow);
-  },
-
-  boardNew: function () {
-    var newBoardForm = new Bellino.Views.BoardForm();
-
-    this._swapView(newBoardForm);
   },
 
   _swapView: function (view) {
