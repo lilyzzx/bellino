@@ -13,6 +13,7 @@
  *= require_tree .
  */
 
+ // .topnav 2
  // .new-board 6
  // .modal 5
  //  .modal-form 3
@@ -34,7 +35,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
   transition: color 0.4s ease;
 }
 
@@ -81,7 +82,7 @@ ul {
   background: white;
   border-bottom: 2px solid black;
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
 
 .topnav-brand,
@@ -179,10 +180,6 @@ ul {
 
 .board-item:hover {
   color: white;
-
-  .board-delete:hover {
-    opacity: 1;
-  }
 }
 
 .navbar-btn:hover {
@@ -206,19 +203,23 @@ ul {
 }
 
 .board-delete {
-  padding: 0 6px;
+  padding: 4px 10px;
   right: 50px;
-  top: 62px;
+  top: 59px;
   font-size: 36px;
   margin-top: -16px;
   color: #aaa;
   position: absolute;
   opacity: 0;
   z-index: 1;
-  border: 1px solid #aaa;
+  border: 2px solid #aaa;
   border-radius: 25px;
-  background-color: inherit;
-  transition: opacity 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  background: transparent;
+  transition: opacity 0.4s ease, color 0.4s ease, border-color 0.4s ease
+}
+
+.board-delete:hover {
+  opacity: 1;
 }
 
 /* Board View */
@@ -483,8 +484,23 @@ ul {
 .add-card:hover,
 .add-list:hover,
 .list-delete:hover,
-.new-board:hover {
+.new-board:hover,
+.board-delete:hover {
   cursor: pointer;
+}
+
+/* New Board */
+
+.new-board-form {
+  text-align: center;
+  padding: 24px;
+}
+
+.new-board-title {
+  font-size: 36px;
+  font-family: 'roboto';
+  border-bottom: 1px solid #ccc;
+  width: 300px;
 }
 
 /* Modal */
@@ -537,9 +553,10 @@ ul {
   background: #fff;
   z-index: 3;
   display: block;
-  width: 300px;
+  width: 350px;
   height: 100px;
-  overflow-: none;
+  overflow: none;
+  border-radius: 12px;
 }
 
 .modal-close {

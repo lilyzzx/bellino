@@ -4,8 +4,7 @@ $(function() {
   $("body").on("click", ".new-board", function (event) {
     event.stopPropagation();
     event.preventDefault();
-    if ($(".btn.new-board").html() == "8" && $('.new-board-title').val() != "") {
-      console.log("yo");
+    if ($(".btn.new-board").html() == "▲" && $('.new-board-title').val() != "") {
       newBoardForm.saveBoard();
     } else {
       $("body").addClass("modal-is-open");
