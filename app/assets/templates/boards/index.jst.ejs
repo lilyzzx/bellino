@@ -1,9 +1,13 @@
 <h1 class="page-title">My Boards</h1>
 
 <% boards.each( function (board) { %>
-  <section class="board-item hvr-rectangle-out">
+  <section class="board-item hvr-rectangle-out" data-id="<%= board.get('id') %>">
     <a href="#boards/<%= board.id %>">
       <h3 class="board-title"><%= board.escape('title') %></h3>
     </a>
+
+    <figure class="board-delete">
+      ✕
+    </figure>
   </section>
 <% }) %>
