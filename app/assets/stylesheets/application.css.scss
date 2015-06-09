@@ -165,9 +165,16 @@ ul {
   font-size: 2rem;
   letter-spacing: 2px;
   margin: 50px auto;
-  width: 200px;
+  width: 100%;
+  display: block;
+  text-align: center;
   padding: 10px;
-  border-bottom: 18px solid black;
+
+  figure {
+    display: inline-block;
+    padding: 0 25px 5px;
+    border-bottom: 18px solid black;
+  }
 }
 
 .board-item {
