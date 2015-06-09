@@ -4,6 +4,10 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   className: 'board-new new-board-form',
   tagName: 'form',
 
+  events: {
+    'keypress .new-board-title': 'checkEnter'
+  },
+
   render: function () {
     var view = this.template();
     this.$el.html(view);
@@ -19,10 +23,17 @@ Bellino.Views.BoardForm = Backbone.View.extend({
       success: function () {
         Bellino.Collections.boards.add(board);
         $(".tcon").removeClass("tcon-transform");
-        // Backbone.history.navigate("/#", { trigger: true });
         this.closeForm();
       }.bind(this)
     });
+  },
+
+  checkEnter: function (event) {
+    if (event.which == 13) {
+      this.saveBoard();
+      $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+      return false;
+    }
   },
 
   closeForm: function () {
