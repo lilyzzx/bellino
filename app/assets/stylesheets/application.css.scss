@@ -473,10 +473,10 @@ ul {
 }
 
 .new-list-form input {
-  margin-top: 6px;
+  margin: 6px 0;
+  border-bottom: 1px solid #ccc;
 }
 
-.new-list-link:hover,
 .new-card-btn:hover,
 .new-list-btn:hover,
 .new-item-btn:hover,

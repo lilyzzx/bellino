@@ -3,10 +3,6 @@ Bellino.Views.BoardShow = Backbone.View.extend({
 
   className: 'board-show',
 
-  events: {
-    'click .new-list-link': 'newList'
-  },
-
   initialize: function () {
     this.listenTo(this.model, "sync add", this.render);
     this.listenTo(this.model.lists(), "add sync remove", this.render);
@@ -23,12 +19,8 @@ Bellino.Views.BoardShow = Backbone.View.extend({
       });
       this.$el.find('.lists').append(listView.render().$el);
     }.bind(this));
+    var newListView = new Bellino.Views.ListNew({ collection: this.model });
+    this.$el.find('.lists').append(newListView.render().$el);
     return this;
   },
-
-  newList: function (event) {
-    event.preventDefault();
-    var newListView = new Bellino.Views.ListNew({ collection: this.model });
-    this.$el.find('.new-list-form').html(newListView.render().$el);
-  }
 });

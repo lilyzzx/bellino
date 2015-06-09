@@ -1,7 +1,8 @@
 Bellino.Views.ListNew = Backbone.View.extend({
   template: JST['lists/new'],
 
-  tagName: 'form',
+  tagName: 'section',
+  className: 'new-list',
   // collection: board,
 
   events: {
@@ -16,7 +17,7 @@ Bellino.Views.ListNew = Backbone.View.extend({
 
   saveList: function (event) {
     event.preventDefault();
-    var attrs = this.$el.serializeJSON().list;
+    var attrs = this.$el.find(".new-list-form").serializeJSON().list;
     var board_id = this.collection.id;
 
     attrs = $.extend(attrs, {
