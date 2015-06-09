@@ -1,5 +1,4 @@
 $(function() {
-  var newBoardForm = new Bellino.Views.BoardForm();
 
   $("body").on("click", ".new-board", function (event) {
     event.stopPropagation();
@@ -8,6 +7,7 @@ $(function() {
       newBoardForm.saveBoard();
     } else {
       $("body").addClass("modal-is-open");
+      var newBoardForm = new Bellino.Views.BoardForm();
       $(".modal-form").html(newBoardForm.render().$el);
     };
   });

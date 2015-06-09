@@ -2,7 +2,7 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   template: JST['boards/form'],
 
   className: 'board-new new-board-form',
-  tagName: 'form',
+  tagName: 'div',
 
   events: {
     'keypress .new-board-title': 'checkEnter'
@@ -16,8 +16,8 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   },
 
   saveBoard: function () {
-    var attrs = this.$el.serializeJSON().board;
-    var board = new Bellino.Models.Board(attrs);
+    var title = this.$el.find(".new-board-title").val();
+    var board = new Bellino.Models.Board({ title: title });
 
     board.save({}, {
       success: function () {
