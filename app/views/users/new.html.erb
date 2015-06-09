@@ -1,12 +1,29 @@
-<h1>Sign Up</h1>
+<section class="login animation-fadein">
+  <h1 class="brand-title">bellino</h1>
 
-<form action="/users" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Email<br>
-    <input name="user[email]" type="text"><br>
-  </label><br>
-  <label>Password<br>
-    <input name="user[password]" type="password"><br>
-  </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
-</form>
+  <section class="brand-subtitle">
+    Get organized.
+    <br>
+    In style.
+  </section>
+
+  <form class="login-form" action="/users" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input class="account-field" name="user[email]" type="text" value placeholder="Email">
+    <br>
+    <input class="account-field" name="user[password]" type="password" value placeholder="Password">
+    <br>
+    <br>
+    <button class='btn account-btn hvr-radial-out'>
+      <input type="submit" value="Sign up">
+    </button>
+    <br>
+  </form>
+  <br>
+  <br>
+  <a href="/session/new">
+    <button class='small-btn btn hvr-radial-out'>
+      Sign in
+    </button>
+  </a>
+</section>

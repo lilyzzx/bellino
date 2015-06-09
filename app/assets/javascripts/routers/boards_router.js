@@ -6,16 +6,15 @@ Bellino.Routers.BoardRouter = Backbone.Router.extend({
 
   initialize: function (options) {
     this.$rootEl = $(options.mainEl);
-    Bellino.Collections.boards.fetch();
   },
 
   index: function () {
+    Bellino.Collections.boards.fetch();
     var boardsIndexView = new Bellino.Views.BoardsIndex({
       collection: Bellino.Collections.boards
     });
 
     this._swapView(boardsIndexView);
-
   },
 
   boardShow: function (id) {

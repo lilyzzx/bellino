@@ -16,23 +16,33 @@
     </li>
 
   <% else %>
-    <li><%= button_to "Log in", new_session_url, class: 'navbar-btn btn hvr-radial-out' %></li>
-    <li><%= button_to "Sign up", new_user_url, class: 'navbar-btn btn hvr-radial-out' %></li>
+    <li>
+
+      <button class="navbar-btn btn hvr-radial-out">
+        <%= button_to "Log in", new_session_url %>
+      </button>
+    </li>
+    <li>
+      <button class="navbar-btn btn hvr-radial-out">
+        <%= button_to "Sign up", new_user_url, method: :get %>
+      </button>
+    </li>
   <% end %>
   </ul>
 </nav>
 
-<figure class="new-board">
-  <a style="padding: 0;">
-    <button class='btn new-board'>
-      <figure class="tcon tcon-remove tcon-remove--chevron-right"></figure>
-    </button>
-  </a>
-</figure>
+<% if signed_in? %>
+  <figure class="new-board">
+    <a style="padding: 0;">
+      <button class='btn new-board'>
+        <figure class="tcon tcon-remove tcon-remove--chevron-right"></figure>
+      </button>
+    </a>
+  </figure>
+<% end %>
 
 <% if flash[:errors] %>
 <div class="alert alert-warning alert-dismissible" role="alert">
-   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-<%= flash[:errors].join("<br>").html_safe %>
+  <%= flash[:errors].join("<br>").html_safe %>
 </div>
 <% end %>
