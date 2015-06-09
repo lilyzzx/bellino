@@ -11,7 +11,6 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   render: function () {
     var view = this.template();
     this.$el.html(view);
-    $(".tcon").addClass("tcon-transform");
     return this;
   },
 
@@ -24,6 +23,8 @@ Bellino.Views.BoardForm = Backbone.View.extend({
         Bellino.Collections.boards.add(board);
         $(".tcon").removeClass("tcon-transform");
         this.closeForm();
+        $(".new-board-title").val("");
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
       }.bind(this)
     });
   },
@@ -31,7 +32,6 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   checkEnter: function (event) {
     if (event.which == 13) {
       this.saveBoard();
-      $("html, body").animate({ scrollTop: $(document).height() }, "slow");
       return false;
     }
   },
@@ -39,7 +39,6 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   closeForm: function () {
     $(".modal-close").removeClass("dark-modal");
     $("body").removeClass("modal-is-open");
-    $(".modal-form").empty();
     $(".tcon").removeClass("tcon-transform");
   }
 });

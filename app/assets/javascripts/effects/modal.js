@@ -1,4 +1,6 @@
 $(function() {
+  var newBoardForm = new Bellino.Views.BoardForm();
+  $(".modal-form").html(newBoardForm.render().$el);
 
   $("body").on("click", ".new-board", function (event) {
     event.stopPropagation();
@@ -6,9 +8,9 @@ $(function() {
     if ($(".tcon").hasClass("tcon-transform") && $(".new-board-title").val() != "") {
       newBoardForm.saveBoard();
     } else {
+      $(".tcon").addClass("tcon-transform")
       $("body").addClass("modal-is-open");
-      var newBoardForm = new Bellino.Views.BoardForm();
-      $(".modal-form").html(newBoardForm.render().$el);
+      $(".new-board-title").focus();
     };
   });
 
