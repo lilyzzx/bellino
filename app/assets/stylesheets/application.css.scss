@@ -449,11 +449,14 @@ ul {
 }
 
 .alert {
-  top: 60px;
+  top: 62px;
   position: relative;
   margin: 0 auto;
-  width: 50%;
+  width: 400px;
+  padding: 11px 0 6px;
+  border-radius: 5px;
   text-align: center;
+  background-color: #eee;
 }
 
 .new-card-btn {
