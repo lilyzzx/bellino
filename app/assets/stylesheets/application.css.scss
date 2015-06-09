@@ -130,9 +130,8 @@ ul {
   z-index: 6;
 
   button {
-    font-size: 44px;
     padding: 11px 9px 8px 10px;
-    border-radius: 30px;
+    border-radius: 35px;
     color: #fff;
     background: #000;
     border: 1px solid #000;
@@ -532,32 +531,16 @@ ul {
 }
 
 .tcon-remove {
-  height: 40px;
+  height: 50px;
   position: relative;
   -webkit-transform: scale(.75);
   transform: scale(.75);
-  width: 40px;
+  width: 50px;
 }
 
 .tcon-remove::before {
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
-}
-
-.tcon-remove::after, .tcon-remove::before {
-  width: 85%;
-  height: 25%;
-  position: absolute;
-  left: 8%;
-  transition: .3s;
-  background: #fff;
-}
-
-.tcon-remove::after, .tcon-remove::before {
-  top: 37%;
-  display: block;
-  border-radius: 2px;
-  content: "";
 }
 
 .tcon-remove::after {
@@ -566,28 +549,33 @@ ul {
 }
 
 .tcon-remove::after, .tcon-remove::before {
+  top: 37%;
+  display: block;
+  border-radius: 2px;
+  content: "";
   width: 85%;
-  height: 15%;
+  height: 16%;
   position: absolute;
   left: 8%;
   transition: .3s;
   background: #fff;
 }
 
+
 .tcon-remove--chevron-right.tcon-transform::before {
-  left: 20%;
-  -webkit-transform: translate(0,55%)rotate(-45deg);
-  transform: translate(0,55%)rotate(-45deg);
-  width: 62%;
+  left: 16%;
+  -webkit-transform: translate(0, 55%) rotate(-45deg);
+  transform: translate(0, 55%) rotate(-35deg);
+  width: 72%;
   top: 50%;
 }
 
 .tcon-remove--chevron-right.tcon-transform::after {
-  left: 20%;
-  -webkit-transform: translate(0,-55%)rotate(45deg);
-  transform: translate(0,-55%)rotate(45deg);
-  width: 62%;
-  top: 28%;
+  left: 16%;
+  -webkit-transform: translate(0, -55%) rotate(45deg);
+  transform: translate(0, -55%) rotate(35deg);
+  width: 72%;
+  top: 31%;
 }
 
 /* Modal */
