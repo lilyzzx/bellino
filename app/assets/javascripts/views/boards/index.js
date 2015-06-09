@@ -18,9 +18,9 @@ Bellino.Views.BoardsIndex = Backbone.View.extend({
   },
 
   deleteBoard: function (event) {
+    event.stopPropagation();
     event.preventDefault();
     var targetId = $(event.target.parentElement).data('id');
-    board = this.collection.getOrFetch(targetId);
-    board.destroy();
+    this.collection.getOrFetch(targetId).destroy();
   }
 });

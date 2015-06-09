@@ -18,3 +18,5 @@ Bellino.Collections.Boards = Backbone.Collection.extend({
     return board;
   }
 });
+
+Bellino.Collections.boards = new Bellino.Collections.Boards();
