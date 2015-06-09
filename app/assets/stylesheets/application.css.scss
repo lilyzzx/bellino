@@ -130,13 +130,13 @@ ul {
   z-index: 6;
 
   button {
-  font-size: 44px;
-  padding: 4px 16px 3px 16px;
-  border-radius: 30px;
-  color: #fff;
-  background: #000;
-  border: 1px solid #000;
-  transition: background 0.4s ease, border-color 0.4s ease;
+    font-size: 44px;
+    padding: 11px 9px 8px 10px;
+    border-radius: 30px;
+    color: #fff;
+    background: #000;
+    border: 1px solid #000;
+    transition: background 0.4s ease, border-color 0.4s ease;
   }
 
   button:hover {
@@ -501,6 +501,93 @@ ul {
   font-family: 'roboto';
   border-bottom: 1px solid #ccc;
   width: 300px;
+}
+
+/* Transformicon */
+
+.tcon {
+  appearance: none;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  transition: .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 40px;
+  background: 0 0;
+}
+
+.tcon, .tcon:focus, .tcon:hover {
+  outline: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.tcon-remove {
+  height: 40px;
+  position: relative;
+  -webkit-transform: scale(.75);
+  transform: scale(.75);
+  width: 40px;
+}
+
+.tcon-remove::before {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.tcon-remove::after, .tcon-remove::before {
+  width: 85%;
+  height: 25%;
+  position: absolute;
+  left: 8%;
+  transition: .3s;
+  background: #fff;
+}
+
+.tcon-remove::after, .tcon-remove::before {
+  top: 37%;
+  display: block;
+  border-radius: 2px;
+  content: "";
+}
+
+.tcon-remove::after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.tcon-remove::after, .tcon-remove::before {
+  width: 85%;
+  height: 15%;
+  position: absolute;
+  left: 8%;
+  transition: .3s;
+  background: #fff;
+}
+
+.tcon-remove--chevron-right.tcon-transform::before {
+  left: 20%;
+  -webkit-transform: translate(0,55%)rotate(-45deg);
+  transform: translate(0,55%)rotate(-45deg);
+  width: 62%;
+  top: 50%;
+}
+
+.tcon-remove--chevron-right.tcon-transform::after {
+  left: 20%;
+  -webkit-transform: translate(0,-55%)rotate(45deg);
+  transform: translate(0,-55%)rotate(45deg);
+  width: 62%;
+  top: 28%;
 }
 
 /* Modal */

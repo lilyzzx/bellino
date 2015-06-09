@@ -6,7 +6,7 @@ Bellino.Views.BoardForm = Backbone.View.extend({
   render: function () {
     var view = this.template();
     this.$el.html(view);
-    $('.btn.new-board').html('▲');
+    $(".tcon").addClass("tcon-transform");
     return this;
   },
 
@@ -16,7 +16,7 @@ Bellino.Views.BoardForm = Backbone.View.extend({
 
     board.save({}, {
       success: function () {
-        $('.btn.new-board').html('+');
+        $(".tcon").removeClass("tcon-transform");
         Backbone.history.navigate("#", { trigger: true });
       }
     });

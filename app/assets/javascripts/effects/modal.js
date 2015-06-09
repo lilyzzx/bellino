@@ -4,7 +4,7 @@ $(function() {
   $("body").on("click", ".new-board", function (event) {
     event.stopPropagation();
     event.preventDefault();
-    if ($(".btn.new-board").html() == "▲" && $('.new-board-title').val() != "") {
+    if ($(".tcon").hasClass("tcon-transform") && $(".new-board-title").val() != "") {
       newBoardForm.saveBoard();
     } else {
       $("body").addClass("modal-is-open");
@@ -16,7 +16,7 @@ $(function() {
     $(".modal-close").removeClass("dark-modal");
     $("body").removeClass("modal-is-open");
     $(".modal-form").empty();
-    $('.btn.new-board').html('+');
+    $(".tcon").removeClass("tcon-transform");
   });
 
   // $("body").on("click", ".login-btn", function (event) {
