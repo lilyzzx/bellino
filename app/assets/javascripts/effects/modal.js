@@ -15,8 +15,4 @@ $(function() {
   $("body").on("click", ".modal-close", function (event) {
     newBoardForm.closeForm();
   });
-
-  // $("body").on("click", ".login-btn", function (event) {
-  //   $("body").addClass("modal-is-open");
-  // });
 });

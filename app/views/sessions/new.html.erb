@@ -1,12 +1,47 @@
-<h1>Sign In</h1>
+<section class="login animation-fadein">
+  <h1 class="brand-title">bellino</h1>
 
-<form action="/session" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Email<br>
-    <input name="user[email]" type="text" value="a@a.com"><br>
-  </label><br>
-  <label>Password<br>
-    <input name="user[password]" type="password" value="password"><br>
-  </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary hvr-radial-out"><br>
-</form>
+  <section class="brand-subtitle">
+    Get organized.
+    <br>
+    In style.
+  </section>
+
+  <form class="login-form" action="/session" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input class="account-field" name="user[email]" type="text" value placeholder="Email">
+    <br>
+    <input class="account-field" name="user[password]" type="password" value placeholder="Password">
+    <br>
+    <br>
+    <button class='btn account-btn hvr-radial-out'>
+      <input type="submit" value="Sign in">
+    </button>
+    <br>
+  </form>
+  <br>
+  <br>
+  <a href="/users/new">
+    <button class='small-btn btn hvr-radial-out'>
+      Sign up
+    </button>
+  </a>
+  <br>
+  <br>
+  <button class='demo small-btn btn hvr-radial-out'>
+    Demo login
+  </button>
+  </a>
+</section>
+
+<script>
+  $(function() {
+    $("body").on("click", ".demo", function (event) {
+      event.stopPropagation();
+      event.preventDefault();
+      $(".account-field").first().val("a@a.com");
+      $(".account-field").last().val("password");
+      $(".login-form").submit();
+    });
+  });
+</script>
