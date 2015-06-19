@@ -13,6 +13,7 @@ gem 'rails_12factor'
 gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false
